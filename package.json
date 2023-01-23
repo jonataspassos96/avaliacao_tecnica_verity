@@ -1,0 +1,11 @@
+{
+  "name": "avaliacao_tecnica_verity",
+  "version": "1.0.0",
+  "description": "Projeto para avaliação técnica da Verity",
+  "main": "index.js",
+  "author": "Jonatas Passos",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.3.0"
+  }
+}
