@@ -1,9 +1,11 @@
 /// <reference types='cypress' />
 
 describe('Home', () => {
-    it('Deve ser exbido o título Nossas soluções_', () => {
+    beforeEach(() => {
         cy.visit('/')
+    })
 
+    it('Deve ser exbido o título Nossas soluções_', () => {
         cy.contains('span', 'Somos Verity')
             .should('have.text', 'Somos Verity')
 
@@ -12,8 +14,6 @@ describe('Home', () => {
     })
 
     it('Deve ser exbido o título Nossos clientes_', () => {
-        cy.visit('/')
-
         cy.contains('span', 'Nossos clientes')
             .should('have.text', 'Nossos clientes')
 

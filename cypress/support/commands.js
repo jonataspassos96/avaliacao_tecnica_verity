@@ -25,3 +25,55 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('fillInNameField', (name = '') => {
+    cy.visit('/contato')
+
+    cy.get('button[data-testid="buttonElement"]')
+        .as('submitButton')
+
+    if(name !== '') {
+        cy.get('input[name="nome"]')
+            .type(name)
+    } else {
+        cy.get('@submitButton')
+            .click()
+    }
+})
+
+Cypress.Commands.add('fillInEmailField', (email = '') => {
+    cy.visit('/contato')
+
+    if(email !== '') {
+        cy.get('input[type="email"]')
+            .type(email)
+     } else {
+        cy.get('@submitButton')
+            .click()
+    }
+})
+
+Cypress.Commands.add('fillInFoneField', (fone = '') => {
+    cy.visit('/contato')
+
+    if(fone !== '') {
+        cy.get('input[type="tel"]')
+            .type(fone)
+    } else {
+        cy.get('@submitButton')
+            .click()
+    }
+})
+
+Cypress.Commands.add('fillInDescriptionField', (description = '') => {
+    cy.visit('/contato')
+
+    cy.get('textarea[placeholder="Nos conte o seu desafio"]')
+        .type(description)
+})
+
+Cypress.Commands.add('isRequired', (element) => {
+    cy.get(element)
+        .invoke('prop', 'validationMessage')
+        .should(text => expect('Preencha este campo.').to.eq(text))
+})
