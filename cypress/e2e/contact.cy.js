@@ -21,8 +21,11 @@ describe('Contato', () => {
             cy.get('input[data-testid="input"]')
                 .click()
 
-            //cy.get('button[data-testid="buttonElement"]')
-            //    .click()
+            cy.get('button[data-testid="buttonElement"]')
+                .click()
+
+            cy.contains('span', 'Obrigado!')
+                .should('have.text', 'Obrigado!')
         })
     })
 
