@@ -67,7 +67,7 @@ ou
     
 ou
 
-   yarn cypress open
+    yarn cypress open
 
 **Passo 4:** para olha o resultado da bateria de teste no Dashboard do Allure, execute o seguinte comando.
 
