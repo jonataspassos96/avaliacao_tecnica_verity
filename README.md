@@ -48,12 +48,12 @@ Após a instalação, é necessário configurar a variável de ambiente no siste
     
 # Execução do projeto
 
-**Passo 1:** para fazer o clone do projeto em sua máquina, execute o seguinte comando.
+**Passo 1 -** para fazer o clone do projeto em sua máquina, execute o seguinte comando:
 
     git@github.com:jonataspassos96/avaliacao_tecnica_verity.git
 
 
-**Passo 2:** após a instalação do projeto, entre no diretório raiz e execute o seguinte comando:
+**Passo 2 -** após a instalação do projeto, entre no diretório raiz e execute o seguinte comando:
 
     npm install
 
@@ -61,7 +61,7 @@ ou
 
     yarn install
 
-**Passo 3:** para olhar a execução dos testes pela interface do Cypress, execute o seguinte comando.
+**Passo 3 -** para olhar a execução dos testes pela interface do Cypress, execute o seguinte comando:
 
     npx cypress open
     
@@ -69,7 +69,7 @@ ou
 
     yarn cypress open
 
-**Passo 4:** para olha o resultado da bateria de teste no Dashboard do Allure, execute o seguinte comando.
+**Passo 4 -** para olhar o resultado da bateria de teste no Dashboard do Allure, execute o seguinte comando:
 
     npm run dashboard
     
