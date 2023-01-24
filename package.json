@@ -4,7 +4,6 @@
   "description": "Projeto para avaliação técnica da Verity",
   "main": "index.js",
   "author": "Jonatas Passos",
-  "license": "MIT",
   "scripts": {
     "dashboard": "rm -rf allure-results && yarn cypress run --env allure=true && yarn allure serve"
   },
