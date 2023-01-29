@@ -11,11 +11,15 @@ describe('Contato', () => {
         cy.visit('/contato')
     })
 
+    const inputName = 'input[name="nome"]'
+    const inputEmail = 'input[type="email"]'
+    const inputTel = 'input[type="tel"]'
+
     context('Sucesso', () => {
         it('Deve preencher o formulário corretamente', () => {
-            cy.fillInNameField(person.name)
-            cy.fillInEmailField(person.email)
-            cy.fillInFoneField(person.fone)
+            cy.fillField(person.name, inputName)
+            cy.fillField(person.email, inputEmail)
+            cy.fillField(person.fone, inputTel)
             cy.fillInDescriptionField(person.description)
 
             cy.get('input[data-testid="input"]')
@@ -31,17 +35,17 @@ describe('Contato', () => {
 
     context('Erro', () => {
         it('Não deve preencher os campos do formulário', () => {
-            cy.fillInNameField()
-            cy.isRequired('input[name="nome"]')
-            cy.fillInNameField(person.name)
+            cy.unfilledField()
+            cy.isRequired(inputName)
+            cy.fillField(person.name, inputName)
 
-            cy.fillInEmailField()
-            cy.isRequired('input[type="email"]')
-            cy.fillInEmailField(person.email)
+            cy.unfilledField()
+            cy.isRequired(inputEmail)
+            cy.fillField(person.email, inputEmail)
 
-            cy.fillInFoneField()
-            cy.fillInDescriptionField('input[type="tel"]')
-            cy.fillInFoneField(person.fone)
+            cy.unfilledField()
+            cy.fillInDescriptionField(inputTel)
+            cy.fillField(person.fone, inputTel)
 
             cy.get('button[data-testid="buttonElement"]')
                 .click()
